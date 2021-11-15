@@ -1,0 +1,3 @@
+<app-error-msg></app-error-msg>
+<div [class.loader]='load'></div>
+<app-property-form [title]="title" [isANewProperty]="true" (outputProperty)="createProperty($event)"></app-property-form>

@@ -1,0 +1,45 @@
+<app-error-msg></app-error-msg>
+<button class="add" routerLink="/cadastroImoveis">Novo Registro</button>
+<div class="container">
+    <h2>Imóveis Cadastrados</h2>
+    <div class="page-bar">
+        <p class="result-description">Foram encontrados {{propertiesCount}} resultados</p>
+
+        <div class="page-navigator">
+            <button class="back" (click)="back()">&lt;</button>
+            <span class="page-number">Página {{page+1}} de {{pageCount}}</span>
+            <button class="next" (click)="next()">&gt;</button>
+        </div>
+    </div>
+
+    <div class="properties-list">
+        <div *ngFor="let property of properties">
+            <div class="property-container" (click)="selectProperty(property.id)">
+                <div class='item-name'>
+                    <ul>
+                        <li>Id: </li>
+                        <li>CEP: </li>
+                        <li>N°: </li>
+                        <li>Complemento: </li>
+                        <li>Quartos: </li>
+                        <li>Valor: </li>
+                        <li>Disponível: </li>
+                    </ul>
+                </div>
+                <div class="item-value">
+                    <ul>
+                        <li>{{property.id}}</li>
+                        <li>{{property.cep}}</li>
+                        <li>{{property.number}}</li>
+                        <li>{{property.complement}}</li>
+                        <li>{{property.rooms}}</li>
+                        <li>R${{property.price}}</li>
+                        <li><span class="available" *ngIf="property.available === true">Sim</span><span
+                                class="unavailable" *ngIf="property.available === false">Não</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

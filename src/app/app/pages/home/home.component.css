@@ -1,0 +1,119 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    background-color: var(--white);   
+    padding: 15px;
+}
+
+.properties-list{    
+    display: flex;    
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;   
+}
+
+h2 {
+    padding: 25px;
+    text-align: center;
+}
+
+.property-container{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    width: 20vw;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: var(--dark-gray);    
+}
+
+li{    
+    list-style-type: none;
+    color: var(--white);
+}
+
+.item-name{
+    padding: 5px;
+}
+
+.item-value{
+    width: 50%;
+    background-color: rgb(114, 113, 113);
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.available{
+    color: limegreen
+}
+
+.unavailable{
+    color: tomato;
+}
+
+.result-description{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.add {
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    height: 40px;
+    color: var(--white);
+    background-color: rgb(89, 218, 89);
+    left: 3vw;
+    top: 22vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.page-navigator {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    width: 25vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.back, .next {
+    cursor: pointer;
+    background-color: var(--dark-gray);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--white);
+}
+
+@media (max-width: 1350px) {
+    .property-container{
+        width: 25vw; 
+    }     
+}
+
+@media (max-width: 1075px) {
+    .property-container{
+        width: 45vw; 
+    }     
+}
+
+@media (max-width: 600px) {
+    .property-container{
+        width: 80vw; 
+    }     
+}
+
+@media (max-width: 350px) {
+    .property-container{
+        width: 99vw;
+        margin: 5px 0;
+    }         
+}

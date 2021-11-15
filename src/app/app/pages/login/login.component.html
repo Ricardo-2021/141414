@@ -1,0 +1,27 @@
+<app-error-msg></app-error-msg>
+<div class='container'>
+    <div [class.loader]='load'></div>
+
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #f="ngForm" class='form'>
+        <div class='item-container'>
+            <input class='input' type='email' id="email" name="email" [(ngModel)]="user.email" required email
+                #email="ngModel" [class.is-invalid]="!email.valid && email.touched" placeholder="E-Mail">
+            <div class='item-error' *ngIf="!email.valid && email.touched">
+                E-mail válido é obrigatório
+            </div>
+        </div>
+        <div class='item-container'>
+            <input class='input' type='password' id="pwd" name="pwd" [(ngModel)]="user.pwd" minlength="8" required
+                #pwd="ngModel" [class.is-invalid]="!pwd.valid && pwd.touched" placeholder="Senha">
+            <div class='item-error' *ngIf="!pwd.valid && pwd.touched">
+                Senha inválida
+            </div>
+        </div>
+        <div class='button-container'>
+            <button class='submit' type="submit"
+                [disabled]="!f.valid">Acessar</button>
+            <button class='singup' type="button" (click)="onSingUp()">Cadastre-se</button>
+        </div>
+    </form>
+</div>
